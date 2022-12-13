@@ -1,0 +1,4 @@
+load 20
+add 15
+sub 10
+mul 3 

@@ -1,0 +1,18 @@
+create_process pr_1 process1_instruction_file.txt
+run_process pr_1
+show_context pr_1
+create_process pr_2 process2_instruction_file.txt
+run_process pr_2
+show_context pr_2
+block_process pr_1
+run_process pr_1
+unblock_process pr_1
+run_process pr_1
+show_context pr_1
+kill_process pr_1
+show_context pr_1
+run_process pr_2
+show_context pr_2
+kill_process pr_2
+show_context pr_2
+
