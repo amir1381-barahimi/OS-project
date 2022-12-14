@@ -3,10 +3,24 @@ import java.util.ArrayList;
 public class Process {
     private String process_ID;
     private State state;
-    private Registers temp;
-    private Registers accumulator;
-    private Registers instruction_register;
+    private Registers<Integer> temp;
+    private Registers<Integer> accumulator;
+    private Registers<String> instruction_register;
     private int pc;
+    private ArrayList<Instructions> instructions;
+
+
+
+
+    public Process(String process_ID, State state) {
+        this.process_ID = process_ID;
+        this.state = state;
+        temp=new Registers<>(0);
+        accumulator=new Registers<>(0);
+        instruction_register=new Registers<>("");
+        pc=0;
+        instructions = new ArrayList<>();
+    }
 
     public ArrayList<Instructions> getInstructions() {
         return instructions;
@@ -14,18 +28,6 @@ public class Process {
 
     public void setInstructions(ArrayList<Instructions> instructions) {
         this.instructions = instructions;
-    }
-
-    private ArrayList<Instructions> instructions;
-
-    public Process(String process_ID, State state) {
-        this.process_ID = process_ID;
-        this.state = state;
-        temp=null;
-        accumulator=null;
-        instruction_register=null;
-        pc=0;
-        instructions = new ArrayList<>();
     }
 
     public String getProcess_ID() {
@@ -40,27 +42,27 @@ public class Process {
         this.state = state;
     }
 
-    public Registers getTemp() {
+    public Registers<Integer> getTemp() {
         return temp;
     }
 
-    public void setTemp(Registers temp) {
+    public void setTemp(Registers<Integer> temp) {
         this.temp = temp;
     }
 
-    public Registers getAccumulator() {
+    public Registers<Integer> getAccumulator() {
         return accumulator;
     }
 
-    public void setAccumulator(Registers accumulator) {
+    public void setAccumulator(Registers<Integer> accumulator) {
         this.accumulator = accumulator;
     }
 
-    public Registers getInstruction_register() {
+    public Registers<String> getInstruction_register() {
         return instruction_register;
     }
 
-    public void setInstruction_register(Registers instruction_register) {
+    public void setInstruction_register(Registers<String> instruction_register) {
         this.instruction_register = instruction_register;
     }
 

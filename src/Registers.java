@@ -1,15 +1,15 @@
-public class Registers {
-    private int val;
+public class Registers<R> {
+    private R val;
 
-    public Registers(int val) {
+    public Registers(R val) {
         this.val = val;
     }
 
-    public int getVal() {
+    public R getVal() {
         return val;
     }
 
-    public void setVal(int val) {
+    public void setVal(R val) {
         this.val = val;
     }
 }
