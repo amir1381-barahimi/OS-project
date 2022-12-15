@@ -1,3 +1,3 @@
 public enum State {
-    ready,blocked,running
+    ready, blocked, running
 }

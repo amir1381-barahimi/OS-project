@@ -1,38 +1,30 @@
 public class Instructions {
     private String type;
-    private int value;
+    private double value;
 
-    public Instructions(String type, int value) {
+    public Instructions(String type, double value) {
         this.type = type;
         this.value = value;
     }
 
-    public static void load(Process process,int num){
+    public static void load(Process process, double num) {
         process.getTemp().setVal(num);
         process.getAccumulator().setVal(num);
-        process.setPc(process.getPc()+1);
-        process.setState(State.running);
     }
 
-    public static void sub(Process process,int num){
+    public static void sub(Process process, double num) {
         process.getTemp().setVal(num);
         process.getAccumulator().setVal(process.getAccumulator().getVal() - num);
-        process.setPc(process.getPc()+1);
-        process.setState(State.running);
     }
 
-    public static void add(Process process,int num){
+    public static void add(Process process, double num) {
         process.getTemp().setVal(num);
         process.getAccumulator().setVal(process.getAccumulator().getVal() + num);
-        process.setPc(process.getPc()+1);
-        process.setState(State.running);
     }
 
-    public static void mul(Process process,int num){
+    public static void mul(Process process, double num) {
         process.getTemp().setVal(num);
         process.getAccumulator().setVal(process.getAccumulator().getVal() * num);
-        process.setPc(process.getPc()+1);
-        process.setState(State.running);
     }
 
     public String getType() {
@@ -43,7 +35,7 @@ public class Instructions {
         this.type = type;
     }
 
-    public int getValue() {
+    public double getValue() {
         return value;
     }
 
